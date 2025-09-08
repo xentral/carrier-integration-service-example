@@ -1,10 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server';
 
 export function middleware(request: NextRequest) {
-  // Only apply middleware to API routes
-  if (!request.nextUrl.pathname.startsWith('/api/')) {
+  // Only apply middleware to specific API routes
+  if (!request.nextUrl.pathname.startsWith('/carriers') && !request.nextUrl.pathname.startsWith('/shipments')) {
     return NextResponse.next();
   }
+  console.log('Middleware applied to:', request.nextUrl.pathname);
 
   const authHeader = request.headers.get('authorization');
   const expectedToken = 'superSecureBearerToken1234';
@@ -49,5 +50,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: '/api/:path*',
+  matcher: ['/carriers/:path*', '/shipments/:path*'],
 };
