@@ -13,7 +13,7 @@ export default function Home() {
           priority
         />
         <p>
-          This is an example project that implements the bare minimum API endpoints for the Carrier Integration Service.
+          This is an example project that implements the bare minimum API endpoints for the Carrier Integration Service in NextJS. It implements the following routes:
         </p>
         <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
           <li className="mb-2 tracking-[-.01em]">

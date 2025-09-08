@@ -1,8 +1,24 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+This is an example project that implements the bare minimum API endpoints for the Carrier Integration Service in NextJS. It implements the following routes:
 
-## Getting Started
+- The setup request at `GET /carriers`
+- The label request at `POST /shipments`
 
-First, run the development server:
+You can try it out yourself by connecting your Xentral instance to this service, or deploy the service yourself.
+
+## Development
+First run:
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+# or
+bun install
+```
+
+
+Then, run the development server:
 
 ```bash
 npm run dev
@@ -16,21 +32,22 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+You can start editing the setup and label routes at: `app/carriers/route.ts` & `app/shipments/route.ts`. The routes auto update as you edit the files.
 
 ## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+To learn more about the Carrier Integration Service check out the [official documentation](https://docs.xentral.com/developer-documentation/carrier-integration-service/).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [Guide](https://developer.xentral.com/docs/carrier-integration-service) - A step-by-step guide for implementing the Carrier Integration Service.
+- [API Spec](https://developer.xentral.com/reference/xentralcarrierintegrationserviceliveness) - OpenAPI specification of the Carrier Integration Service.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## Testing
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This project is deployed at: [carrier-integration-service-example.xentral.com](https://carrier-integration-service-example.xentral.com)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+You can connect your Xentral instance to this service deployment by following the [documentation](https://developer.xentral.com/docs/cisc-example-service#https://developer.xentral.com/v25.33/docs/cis-shipping-method-end-user#connecting-xentral-to-the-example-carrier-integration-service).
+
+## Attribution
+Based on a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+
