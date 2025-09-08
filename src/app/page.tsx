@@ -6,24 +6,32 @@ export default function Home() {
       <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
         <Image
           className="dark:invert"
-          src="/next.svg"
+          src="/xentral.svg"
           alt="Next.js logo"
           width={180}
           height={38}
           priority
         />
+        <p>
+          This is an example project that implements the bare minimum API endpoints for the Carrier Integration Service.
+        </p>
         <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
           <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
+            The setup request at {" "}
             <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
+              GET /carriers
             </code>
-            .
           </li>
           <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
+            The label request at {" "}
+            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
+              POST /shipments
+            </code>
           </li>
         </ol>
+        <p>
+          You can try it out yourself by connecting your Xentral instance to this service, or deploy the service yourself.
+        </p>
 
         <div className="flex gap-4 items-center flex-col sm:flex-row">
           <a
@@ -33,17 +41,16 @@ export default function Home() {
             rel="noopener noreferrer"
           >
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
+              src="/github-mark.svg"
               alt="Vercel logomark"
               width={20}
               height={20}
             />
-            Deploy now
+            Clone repo
           </a>
           <a
             className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            href=""
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -69,7 +76,7 @@ export default function Home() {
         </a>
         <a
           className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+          href="https://developer.xentral.com/reference/xentralcarrierintegrationserviceliveness"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -80,11 +87,11 @@ export default function Home() {
             width={16}
             height={16}
           />
-          Examples
+          API Documentation
         </a>
         <a
           className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+          href="https://xentral.com"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -95,7 +102,7 @@ export default function Home() {
             width={16}
             height={16}
           />
-          Go to nextjs.org →
+          Go to xentral.com →
         </a>
       </footer>
     </div>
