@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import * as fs from 'fs';
 import * as path from 'path';
 import { randomUUID } from 'crypto';
+import { logResponse, logRequestBody } from '@/lib/logger';
 
 function generateTrackingId(): string {
   return Math.floor(100000000 + Math.random() * 900000000).toString();
@@ -13,6 +14,7 @@ function generateTrackingUrl(trackingId: string): string {
 
 export async function POST(request: NextRequest) {
   const body = await request.json();
+  logRequestBody(body);
 
   const shippingLabels = body.parcels.map((parcel: any) => {
     const trackingId = generateTrackingId();
@@ -27,11 +29,14 @@ export async function POST(request: NextRequest) {
     };
   });
 
-  return NextResponse.json({
+  const responseData = {
     shippingLabels: shippingLabels,
     id: randomUUID(),
     carrier: {
       name: body.carrier?.id || "DHL"
     }
-  });
+  };
+
+  logResponse(200, responseData);
+  return NextResponse.json(responseData);
 }

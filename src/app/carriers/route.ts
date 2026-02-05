@@ -1,8 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { logResponse } from '@/lib/logger';
 
 export async function GET(request: NextRequest) {
 
-  return NextResponse.json({
+  const responseData = {
     carriers: [
       {
         name: "Post Swiss",
@@ -89,5 +90,8 @@ export async function GET(request: NextRequest) {
         ]
       }
     ]
-  });
+  };
+
+  logResponse(200, responseData);
+  return NextResponse.json(responseData);
 }
