@@ -145,6 +145,60 @@ export async function GET(request: NextRequest) {
               displayContext: "configuration"
             },
             {
+              type: "select",
+              id: "INCOTERM",
+              name: "Incoterm",
+              description: "The Incoterm that is used for the shipment. Set a default value in the configuration, or select a deviating value for each shipment.",
+              required: true,
+              displayContext: "both",
+              availableValues: [
+                {
+                  id: "EXW",
+                  name: "EXW - Ex Works"
+                },
+                {
+                  id: "FCA",
+                  name: "FCA - Free Carrier"
+                },
+                {
+                  id: "CPT",
+                  name: "CPT - Carriage Paid To"
+                },
+                {
+                  id: "CIP",
+                  name: "CIP - Carriage and Insurance Paid To"
+                },
+                {
+                  id: "DAP",
+                  name: "DAP - Delivered at Place"
+                },
+                {
+                  id: "DPU",
+                  name: "DPU - Delivered at Place Unloaded"
+                },
+                {
+                  id: "DDP",
+                  name: "DDP - Delivered Duty Paid"
+                },
+                {
+                  id: "FAS",
+                  name: "FAS - Free Alongside Ship"
+                },
+                {
+                  id: "FOB",
+                  name: "FOB - Free on Board"
+                },
+                {
+                  id: "CFR",
+                  name: "CFR - Cost and Freight"
+                },
+                {
+                  id: "CIF",
+                  name: "CIF - Cost, Insurance and Freight"
+                }
+              ]
+            },
+            {
               type: "number",
               id: "PACKAGING_WEIGHT",
               name: "Packaging Weight",
