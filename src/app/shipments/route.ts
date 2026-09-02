@@ -12,7 +12,9 @@ function generateTrackingUrl(trackingId: string): string {
 }
 
 export async function POST(request: NextRequest) {
+  console.log("Received shipment creation request");
   const body = await request.json();
+  console.log("Carrier Options:", JSON.stringify(body));
 
   const shippingLabels = body.parcels.map((parcel: any) => {
     const trackingId = generateTrackingId();

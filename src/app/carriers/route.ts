@@ -137,6 +137,14 @@ export async function GET(request: NextRequest) {
               ]
             },
             {
+              type: "string",
+              id: "DHL_ACCOUNT_NUMBER",
+              name: "DHL Account Number",
+              description: "This is the account number that is used to bill the shipment. If not provided, the default account number will be used.",
+              required: false,
+              displayContext: "configuration"
+            },
+            {
               type: "number",
               id: "PACKAGING_WEIGHT",
               name: "Packaging Weight",
